@@ -1,0 +1,166 @@
+    body {
+        margin: 20px;
+        font-size: 1rem;
+        font-family: sans-serif;
+    }
+    
+    form {
+        display: block;
+        margin: 0 0 20px;
+    }
+
+    
+    label {
+        font-size: 0.9rem;
+    }
+
+      h1 {
+        font-size: 1.2rem;
+        margin: 0 0 10px;
+    }  
+
+    h2 {
+        font-size: 1.1rem;
+        margin: 0 0 10px;
+    }
+
+    .colorDirections {
+        font-size: 0.9rem;
+
+        margin: 10px 0 0;
+
+    }
+
+
+    
+    .fl {
+        float: left
+    }
+    
+    .fr {
+        float: right;
+    }
+    
+    .clear {
+        clear: both;
+    }
+    
+    .mB5 {
+        margin-bottom: 5px;
+    }
+    
+    .mT10 {
+        margin-top: 10px;
+    }
+
+    .mT20 {
+        margin-top: 20px;
+    }
+    
+    .mR10 {
+        margin-right: 10px;
+    }
+
+    .mL10 { 
+        margin-left: 10px
+        }
+    /*        .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+*/
+    
+    .dBlock {
+        display: block;
+    }
+    
+    .tblMinMax {
+        margin: 5px 0 10px;
+        border-collapse: collapse;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .tblMinMax td {
+        text-align: right;
+        padding: 5px;
+    }
+    
+    legend {
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+    
+    input[type="radio"] {
+        margin: 0 5px 0 0;
+    }
+    
+    input[type="text"] {
+        width: 80px;
+        margin: 0;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #666;
+    }
+    
+    textarea {
+        display: block;
+        margin: 20px 0;
+        height: 200px;
+
+    }
+    
+    fieldset {
+        margin: 0 10px 0 0;
+    }
+    
+    .btnGenerate {
+        background: #1b75bb;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        margin: 10px auto;
+        display: table;
+        cursor: pointer;
+    }
+
+    .centerEl {
+        margin: 0 auto;
+        display: table;
+    }
+
+.desc {
+    font-size: 0.9rem;
+    margin: 0 0 20px;
+}
+
+.rightBorder {
+    margin: 0 10px 0 0; 
+    border-right: 1px solid #ccc; 
+    padding: 0 10px 0 0
+}
+
+.leftBorder {
+    margin: 0 0 0 10px; 
+    border-left: 1px solid #ccc; 
+    padding: 0 0 0 10px; 
+}
+
+.testGray {
+    background: #ccc;
+}
+
+.minMaxLbl {
+    font-size: 14px;
+    font-style: oblique;
+    color: #666;
+}
+
+.vAlign {
+    display: flex;
+    align-items: center;
+}

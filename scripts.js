@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
     //page form elements
     var rbRandomW    = document.getElementById("rbRandomW");
@@ -6,16 +8,15 @@ window.onload = function() {
     var rbFixedW     = document.getElementById("rbFixedW");
     var rbFixedH     = document.getElementById("rbFixedH");
 
+    
     var tbFixedW     = document.getElementById("tbFixedW");
     var tbFixedH     = document.getElementById("tbFixedH");
 
+    var divMinMax    = document.getElementById("divMinMax");
     var cbAlternateH = document.getElementById("cbAlternateH");
 
     var tbMinH       = document.getElementById("tbMinH");
     var tbMaxH       = document.getElementById("tbMaxH");
-
-    var tblMinMaxW   = document.getElementById("tblMinMaxW");
-    var tblMinMaxH   = document.getElementById("tblMinMaxH");
 
     var tbColors     = document.getElementById("tbColors");
 
@@ -27,8 +28,9 @@ window.onload = function() {
     var btn          = document.getElementById("btn");
     var ta           = document.getElementById('ta');
     var canvas       = document.getElementById('canvas');
-    var testBtn      = document.getElementById('testBtn');
+    var btnGenerate      = document.getElementById('btnGenerate');
 
+    var divMinMax    = document.getElementById('divMinMax');
 
     //default values
     var build = {
@@ -51,6 +53,12 @@ window.onload = function() {
         alternatePos: false, //alternate adjacent columns
         randomLength: false, //randomize plank length
     };
+
+
+        // divMinMax.setAttribute("disabled", true);
+        // divMinMax.setAttribute("disabled", true);
+        divMinMax.style.opacity = "0.3";
+
 
     function getRandomNumber(minimum, maximum) {
         return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
@@ -194,45 +202,20 @@ window.onload = function() {
         createSVG();
     }
 
-    testBtn.onclick = function() {  	
+    btnGenerate.onclick = function() {  	
         buildFloor();
     };
 
 
-    tblMinMaxW.style.display = "none";
-    tblMinMaxH.style.display = "none";
-
-
-    //hiding and showing inputs
-    rbRandomW.onclick = function() {
-        tbFixedW.style.visibility = "hidden";
-        rbRandomH.checked = false;
-        rbFixedH.checked = true;
-        tbFixedH.style.visibility = "visible";
-
-        tblMinMaxW.style.display = "block";
-        tblMinMaxH.style.display = "none";
-    };
-
-    rbFixedW.onclick = function() {
-        tbFixedW.style.visibility = "visible";
-        tblMinMaxW.style.display = "none";
-    };
 
     rbRandomH.onclick = function() {
-        tbFixedH.style.visibility = "hidden";
-        rbRandomW.checked = false;
-        rbFixedW.checked = true;
-        tbFixedW.style.visibility = "visible";
-        cbAlternateH.checked = false;
 
-        tblMinMaxW.style.display = "none";
-        tblMinMaxH.style.display = "block";
+        cbAlternateH.checked = false;
+        divMinMax.style.opacity = "1";
     };
 
     rbFixedH.onclick = function() {
-        tbFixedH.style.visibility = "visible";
-        tblMinMaxH.style.display = "none";
+        divMinMax.style.opacity = "0.3";
     };
 
 }; //window

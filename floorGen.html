@@ -4,199 +4,88 @@
 <head>
     <meta charset="UTF-8" content="">
     <title>Floor Generator</title>
-    <style>
-    body {
-        margin: 20px;
-        font-size: 1rem;
-        font-family: sans-serif;
-    }
-    
-    form {
-        display: block;
-        margin: 0 0 20px;
-    }
-
-    
-    label {
-        font-size: 0.9rem;
-    }
-    
-    .fl {
-        float: left
-    }
-    
-    .fr {
-        float: right;
-    }
-    
-    .clear {
-        clear: both;
-    }
-    
-    .mB5 {
-        margin-bottom: 5px;
-    }
-    
-    .mT10 {
-        margin-top: 10px;
-    }
-    
-    .mR10 {
-        margin-right: 10px;
-    }
-    /*        .hide {
-        display: none;
-    }
-
-    .show {
-        display: block;
-    }
-*/
-    
-    .dBlock {
-        display: block;
-    }
-    
-    .tblMinMax {
-        margin: 5px 0 10px;
-        border-collapse: collapse;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-    }
-    
-    .tblMinMax td {
-        text-align: right;
-        padding: 5px;
-    }
-    
-    legend {
-        font-weight: bold;
-        font-size: 0.9rem;
-    }
-    
-    input[type="radio"] {
-        margin: 0 10px 10px 0;
-    }
-    
-    input[type="text"] {
-        width: 80px;
-        margin: 0;
-        padding: 5px;
-        border-radius: 3px;
-        border: 1px solid #666;
-    }
-    
-    textarea {
-        display: block;
-        margin: 20px 0;
-        height: 200px;
-
-    }
-    
-    fieldset {
-        margin: 0 10px 0 0;
-    }
-    
-    .testBtn {
-        background: #ccc;
-        padding: 5px 10px;
-        float: left;
-        cursor: pointer;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <form action="">
-        <fieldset class="fl">
-            <legend>Canvas</legend>
+
+
+
+<div class="centerEl">
+    <h1>Generate Brick/Hardwood Floor Texture as SVG</h1>
+<p class="desc">Choose your options and select "Generate Texture." Copy the code, paste it into any text editor and save the file as an svg.</p>
+<form class="fl">
+
+<fieldset class="fl">
+    <legend>Canvas Dimensions</legend>
+
+            <div class="fl">
             <label class="dBlock mB5" for="canvasW">Width:</label>
             <input type="text" name="tbCW" id="tbCW" value="1024">
-            <label class="dBlock mT10 mB5" for="canvasW">Height:</label>
+            </div>
+<div class="fl mL10">
+            <label class="dBlock mB5" for="canvasW">Height:</label>
             <input type="text" name="tbCH" id="tbCH" value="1024">
-        </fieldset>
-        <fieldset class="fl">
-            <legend>Plank Width</legend>
-            <input class="fl" type="radio" name="sizeW" id="rbRandomW" value="random">
-            <label class="fl" for="rbRandom">Random</label>
-            <div class="clear"></div>
-            <!-- min max width table -->
-            <table id="tblMinMaxW" class="tblMinMax">
-                <tbody>
-                    <tr>
-                        <td>
-                            <label for="tbMinW" class="fl">Min:</label>
-                        </td>
-                        <td>
-                            <input style="width: 40px" type="text" id="tbMinW" class="tbMinMax" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="tbMaxW" class="fl">Max:</label>
-                        </td>
-                        <td>
-                            <input style="width: 40px" type="text" id="tbMaxW" class="tbMinMax" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- / min max width table -->
-            <div class="clear"></div>
-            <input class="fl" type="radio" name="sizeW" id="rbFixedW" checked value="fixed">
-            <label class="fl" for="rbFixed">Fixed</label>
-            <div class="clear"></div>
+            </div>
+
+</fieldset>
+
+<fieldset class="fl">
+    <legend>Item Dimensions</legend>
+            <div class="fl rightBorder">
+            <label class="dBlock mB5" for="tbFixedW">Width:</label>
             <input type="text" name="tbFixedW" id="tbFixedW" value="30">
-        </fieldset>
-        <fieldset class="fl">
-            <legend>Plank Height</legend>
-            <input class="fl" type="radio" name="sizeH" id="rbRandomH" value="random">
-            <label class="fl" for="rbRandom">Random</label>
-            <div class="clear"></div>
-            <!-- min max height table -->
-            <table id="tblMinMaxH" class="tblMinMax">
-                <tbody>
-                    <tr>
-                        <td>
-                            <label for="tbMinH" class="fl">Min:</label>
-                        </td>
-                        <td>
-                            <input style="width: 40px" type="text" id="tbMinH" class="tbMinMax" value="80" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="tbMaxH" class="fl">Max:</label>
-                        </td>
-                        <td>
-                            <input style="width: 40px" type="text" id="tbMaxH" class="tbMinMax" value="160"/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- / min max height table -->
-            <div class="clear"></div>
-            <input class="fl" type="radio" name="sizeH" id="rbFixedH" checked value="fixed">
-            <label class="fl" for="rbFixed">Fixed</label>
-            <div class="clear"></div>
-            <input type="text" name="tbFixedH" id="tbFixedH" value="120">
-            <div class="clear mB5"></div>
-            
-        </fieldset>
-        <div id="testBtn" class="testBtn">test button</div>
-    </form>
-    <div class="fl">
-    <input type="checkbox" id="cbAlternateH" name="cbAlternateH" value="cbValue"> <label for="cbAlternate">Alternate adjacent columns</label>
-     <div class="clear"></div>
-     <label for="tbGap">spacing:</label><input style="width: 40px" name="tbGap" type="text" id="tbGap" class="tbMinMax" value="1"/>
+</div>
+
+<div class="fl">
+    <label class="dBlock mB5">Height:</label>
+    <div class="clear"></div>
+    
+    <div class="fl rightBorder">
+            <input type="radio" name="sizeH" id="rbFixedH" checked value="fixed">
+            <label class="mR10" for="rbFixed">Fixed:</label>     
+ <input type="text" name="tbFixedH" id="tbFixedH" value="120">
+</div>
+
+       <div class="fl vAlign">
+            <input type="radio" name="sizeH" id="rbRandomH" value="random">
+            <label for="rbRandom" class="mR10">Random:</label>
+            <div id="divMinMax">
+             <label for="tbMinH" class="minMaxLbl">Min:</label> <input style="width: 40px" type="text" id="tbMinH" value="80" />
+              <label for="tbMaxH" class="minMaxLbl">Max:</label> <input style="width: 40px" type="text" id="tbMaxH" value="160"/>
+
+</div>   
+</div>     
+</div>
+</fieldset>
 <div class="clear"></div>
-<input type="text" id="tbColors" name="tbColors" style="width: 300px" value="#6c4637" />
-     </div>
-    <div class="clear"></div>
-    <textarea id='ta' cols="100" rows="200"></textarea>
-    <div class="clear"></div>
-    <canvas id='canvas'></canvas>
-</body>
+<fieldset class="fl mT20">
+    <legend>Item Details</legend>
+
+       
+
+<input type="checkbox" id="cbAlternateH" name="cbAlternateH" value="cbValue"> <label class="rightBorder" for="cbAlternate">Alternate Column Position</label>
+  <label for="tbGap" class="mR10">Item Spacing:</label><input style="width: 40px" name="tbGap" type="text" id="tbGap" value="1"/>
+<label for="tbColors" class="mR10 leftBorder">Item Color List:</label>
+  <input type="text" id="tbColors" name="tbColors" style="width: 290px" value="#6c4637" />
+   <p class="colorDirections">Colors listed in 'item color list' are applied to items randomly. Colors must be separated by a comma</p>
+</fieldset>
+<div class="clear"></div>
+<div id="btnGenerate" class="btnGenerate">Generate Texture</div>
+<div class="clear"></div>
+<textarea id='ta' cols="135" rows="200"></textarea>
+</form>
+</div>
+
+<div class="centerEl">
+ <canvas id='canvas'></canvas>
+</div>
+
+   
+
+      
 <script src="scripts.js" type="text/javascript"></script>
+</body>
+
 
 </html>
