@@ -24,6 +24,8 @@
         margin: 0 0 10px;
     }
 
+
+
     .colorDirections {
         font-size: 0.9rem;
 
@@ -48,6 +50,11 @@
     .mB5 {
         margin-bottom: 5px;
     }
+
+    .mT0 {
+        margin-top: 0;
+
+    }
     
     .mT10 {
         margin-top: 10px;
@@ -64,14 +71,7 @@
     .mL10 { 
         margin-left: 10px
         }
-    /*        .hide {
-        display: none;
-    }
 
-    .show {
-        display: block;
-    }
-*/
     
     .dBlock {
         display: block;

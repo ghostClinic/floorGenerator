@@ -2,10 +2,8 @@
 
 window.onload = function() {
     //page form elements
-    var rbRandomW    = document.getElementById("rbRandomW");
     var rbRandomH    = document.getElementById("rbRandomH");
 
-    var rbFixedW     = document.getElementById("rbFixedW");
     var rbFixedH     = document.getElementById("rbFixedH");
 
     
@@ -25,12 +23,10 @@ window.onload = function() {
 
     var tbGap        = document.getElementById("tbGap");
 
-    var btn          = document.getElementById("btn");
     var ta           = document.getElementById('ta');
     var canvas       = document.getElementById('canvas');
-    var btnGenerate      = document.getElementById('btnGenerate');
+    var btnGenerate  = document.getElementById('btnGenerate');
 
-    var divMinMax    = document.getElementById('divMinMax');
 
     //default values
     var build = {
@@ -108,6 +104,7 @@ window.onload = function() {
         return "<?xml version='1.0' encoding='utf-8'?> \n <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'> \n <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='" + cW + "px' height='" + cH + "px' viewBox='0 0 " + cW + " " + cH + "' enable-background='new 0 0 " + cW + " " + cH + "' xml:space='preserve'>\n";
 
     }
+
 
     function createSVG() {
     	//clear svg text area
